@@ -18,7 +18,7 @@
     "pe_ttm": 28.7812
   },
   "fund_flow": {
-    "error": "Remote end closed connection without response"
+    "info": "资金流向数据暂不可用"
   },
   "news": [
     {
