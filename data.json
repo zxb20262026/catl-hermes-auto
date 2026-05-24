@@ -13,13 +13,42 @@
   "h_share": {
     "name": "宁德时代",
     "price": 673.5,
-    "change_pct": "12.500",
-    "high": 675.0,
-    "low": 686.0
+    "change_pct": "12.500"
   },
   "pe": {
-    "error": "fetch failed"
+    "pe_ttm": 410.0
   },
-  "news": [],
+  "news": [
+    {
+      "title": "一汽解放与宁德时代开展技术交流",
+      "date": "2026-05-21",
+      "source": "证券时报网",
+      "url": "http://finance.eastmoney.com/a/202605213745579318.html"
+    },
+    {
+      "title": "宁德时代成交额超上一日全天",
+      "date": "2026-05-21",
+      "source": "证券时报网",
+      "url": "http://finance.eastmoney.com/a/202605213745001121.html"
+    },
+    {
+      "title": "“铝-锂”双轮驱动 宁德时代打造新能源全产业链集群",
+      "date": "2026-05-22",
+      "source": "上海证券报·中国证券网",
+      "url": "http://finance.eastmoney.com/a/202605223746972439.html"
+    },
+    {
+      "title": "宁德时代成立时代大成能源科技公司",
+      "date": "2026-05-21",
+      "source": "财联社",
+      "url": "http://finance.eastmoney.com/a/202605213745078494.html"
+    },
+    {
+      "title": "宁德时代与四川港投集团签署战略合作协议",
+      "date": "2026-05-21",
+      "source": "证券时报网",
+      "url": "http://finance.eastmoney.com/a/202605213745512062.html"
+    }
+  ],
   "lithium": null
 }
