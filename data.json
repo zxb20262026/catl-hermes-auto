@@ -12,11 +12,13 @@
   },
   "h_share": {
     "name": "宁德时代",
-    "price": 673.5,
-    "change_pct": "12.500"
+    "price": 673.5
   },
   "pe": {
     "pe_ttm": 28.7812
+  },
+  "fund_flow": {
+    "error": "Remote end closed connection without response"
   },
   "news": [
     {
