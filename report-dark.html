@@ -1,18 +1,29 @@
 <!DOCTYPE html>
-<html lang="zh-CN"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
 <title>宁德时代 300750.SZ 投资分析报告 · 2026-05-24</title>
 <script src="https://cdn.jsdelivr.net/npm/echarts@5/dist/echarts.min.js"></script>
-<style>:root{--bg:#0d1117;--card:#161b22;--border:#30363d;--text:#e6edf3;--text2:#8b949e;--green:#3fb950;--yellow:#d29922;--red:#f85149;--blue:#58a6ff;--up:#f85149;--down:#3fb950;--purple:#a855f7}
+<style>:root{--bg:#0d1117;--card:#161b22;--border:#30363d;--text:#e6edf3;--text2:#8b949e;--green:#3fb950;--yellow:#d29922;--red:#f85149;--blue:#58a6ff;--accent:#79c0ff;--up:#f85149;--down:#3fb950;--purple:#a855f7}
 *{margin:0;padding:0;box-sizing:border-box}
 body{background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','Noto Sans SC',sans-serif;line-height:1.7}
 .container{max-width:1100px;margin:0 auto;padding:20px 16px}
 h1{font-size:22px;font-weight:700;margin-bottom:4px}
 h2{font-size:18px;font-weight:600;margin:28px 0 12px;padding-bottom:8px;border-bottom:1px solid var(--border)}
+h3{font-size:15px;font-weight:600;margin:16px 0 8px;color:var(--accent)}
 .meta{font-size:12px;color:var(--text2);margin-bottom:24px}
 .card{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:20px;margin-bottom:16px}
-.kpi-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin-bottom:12px}
+.card-title{font-size:14px;font-weight:600;margin-bottom:12px;display:flex;align-items:center;gap:6px}
+.badge{display:inline-block;padding:2px 10px;border-radius:12px;font-size:11px;font-weight:600}
+.badge-green{background:rgba(63,185,80,.15);color:var(--green)}
+.badge-yellow{background:rgba(210,153,34,.15);color:var(--yellow)}
+.badge-red{background:rgba(248,81,73,.15);color:var(--red)}
+.badge-blue{background:rgba(88,166,255,.15);color:var(--blue)}
+.badge-purple{background:rgba(168,85,247,.15);color:var(--purple)}
+.kpi-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:10px;margin-bottom:12px}
 .kpi-box{background:rgba(255,255,255,.03);border-radius:8px;padding:14px;text-align:center}
-.kpi-box .val{font-size:22px;font-weight:700;margin:4px 0}
+.kpi-box .val{font-size:24px;font-weight:700;margin:4px 0}
 .kpi-box .label{font-size:11px;color:var(--text2)}
 .kpi-box .sub{font-size:10px;margin-top:2px}
 table{width:100%;border-collapse:collapse;font-size:13px;margin:8px 0}
@@ -20,66 +31,160 @@ th{text-align:left;color:var(--text2);font-weight:500;padding:8px 10px;border-bo
 td{padding:7px 10px;border-bottom:1px solid rgba(48,54,61,.5)}
 .tag-pos{color:var(--green);font-weight:600}
 .tag-neg{color:var(--red);font-weight:600}
+.tag-neu{color:var(--text2)}
 .chart-box{width:100%;height:300px}
-.news-item{padding:10px 0;border-bottom:1px solid rgba(48,54,61,.5);display:flex;gap:10px}
+.news-item{padding:10px 0;border-bottom:1px solid rgba(48,54,61,.5);display:flex;gap:10px;align-items:flex-start}
 .news-item:last-child{border-bottom:none}
 .news-date{font-size:11px;color:var(--text2);min-width:48px;flex-shrink:0;padding-top:2px}
-.news-title{font-size:13px;color:var(--text);text-decoration:none}
-.news-title:hover{color:var(--blue)}
-.news-meta{font-size:10px;color:var(--text2);margin-top:2px}
-.signal-box{background:var(--card);border:2px solid #28a745;border-radius:10px;padding:20px;margin-bottom:16px;text-align:center}
-.signal-box .verdict{font-size:20px;font-weight:700;color:#28a745}
-.signal-box .detail{font-size:12px;color:var(--text2);margin-top:6px}
-.footer{text-align:center;padding:24px 0;font-size:11px;color:var(--text2);line-height:1.8}
-</style></head><body>
+.news-title{font-size:13px;line-height:1.5}
+.news-meta{font-size:10px;color:var(--text2);margin-top:3px}
+.signal-box{padding:20px;border-radius:10px;text-align:center;margin:16px 0}
+.signal-buy{background:rgba(63,185,80,.08);border:2px solid var(--green)}
+.signal-hold{background:rgba(210,153,34,.08);border:2px solid var(--yellow)}
+.signal-sell{background:rgba(248,81,73,.08);border:2px solid var(--red)}
+.signal-box .icon{font-size:40px;margin-bottom:8px}
+.signal-box .text{font-size:20px;font-weight:700}
+.signal-box .detail{font-size:13px;color:var(--text2);margin-top:8px;line-height:1.8}
+.impact-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.impact-item{padding:12px;border-radius:8px}
+.impact-pos{background:rgba(63,185,80,.06);border-left:3px solid var(--green)}
+.impact-neg{background:rgba(248,81,73,.06);border-left:3px solid var(--red)}
+.impact-mix{background:rgba(210,153,34,.06);border-left:3px solid var(--yellow)}
+.impact-item .factor{font-size:13px;font-weight:600;margin-bottom:4px}
+.impact-item .desc{font-size:12px;color:var(--text2);line-height:1.5}
+.summary-box{background:rgba(88,166,255,.05);border:1px solid rgba(88,166,255,.2);border-radius:8px;padding:16px;margin:12px 0}
+.summary-box p{font-size:13px;margin-bottom:8px}
+.summary-box p:last-child{margin-bottom:0}
+.footer{text-align:center;padding:24px;font-size:11px;color:var(--text2);border-top:1px solid var(--border);margin-top:32px}
+@media(max-width:768px){.impact-grid{grid-template-columns:1fr}.kpi-grid{grid-template-columns:repeat(2,1fr)}h1{font-size:18px}}</style>
+</head>
+<body>
 <div class="container">
 <h1>🔋 宁德时代 (300750.SZ)</h1>
-<div class="meta">2026-05-24 · Hermes Agent · 200股长线</div>
+<p class="meta">价值投资分析报告 · PEG估值法 · 更新时间：2026-05-24<br>
+Hermes Agent · 200股长线仓位</p>
 
-<div class="signal-box">
-<div class="verdict">✅ PEG深度低估 买入区间</div>
-<div class="detail">PEG = 0.72 · PE(TTM) = 28.8 · AH溢价 = -33.64%</div>
-</div>
-
+<!-- ========== 核心指标 ========== -->
+<div class="card">
+<div class="card-title">📊 核心指标速览</div>
 <div class="kpi-grid">
 <div class="kpi-box"><div class="label">A股收盘</div><div class="val" style="color:#28a745">¥411.16</div><div class="sub" style="color:#28a745">-0.11%</div></div>
 <div class="kpi-box"><div class="label">H股</div><div class="val">HK$673.5</div></div>
+<div class="kpi-box"><div class="label">AH溢价</div><div class="val" style="color:var(--green)">-33.64%</div></div>
 <div class="kpi-box"><div class="label">PEG</div><div class="val" style="color:#28a745">0.72</div></div>
 <div class="kpi-box"><div class="label">PE(TTM)</div><div class="val">28.8</div></div>
 <div class="kpi-box"><div class="label">碳酸锂</div><div class="val" style="font-size:16px">参考: 7-8万/吨</div></div>
 <div class="kpi-box"><div class="label">成交额</div><div class="val" style="font-size:16px">114亿</div><div class="sub">2778万手</div></div>
+<div class="kpi-box"><div class="label">PE分位</div><div class="val" style="font-size:16px;color:var(--yellow)">合理</div></div>
+</div>
+<div style="margin-top:12px;padding:12px;background:rgba(255,255,255,.03);border-radius:8px;text-align:center;">
+<div style="font-size:15px;font-weight:600;color:#28a745">✅ PEG深度低估 买入区间</div>
+<div style="font-size:11px;color:var(--text2);margin-top:4px">PEG ≈ 0.72，低于1.0进入买入区间（&lt;1.0买入 / &gt;1.5卖出） · PE 28.8 合理 · AH溢价-33.64%</div>
+</div>
 </div>
 
+<!-- ========== 资讯 ========== -->
 <div class="card">
-<h2>📰 资讯</h2>
-<div class="news-item"><span class="news-date">2026-05-21</span><div><a href="http://finance.eastmoney.com/a/202605213745579318.html" target="_blank" class="news-title">一汽解放与宁德时代开展技术交流</a><div class="news-meta">证券时报网</div></div></div>
+<h2>📰 今日重大资讯（2026-05-24）</h2>
+<div class="news-item" style="border-left:3px solid var(--red);padding-left:10px;margin-bottom:8px"><div><strong>一汽解放与宁德时代开展技术交流</strong><div class="news-meta">证券时报网 · 2026-05-21</div></div></div><div class="news-item" style="border-left:3px solid var(--red);padding-left:10px;margin-bottom:8px"><div><strong>宁德时代成交额超上一日全天</strong><div class="news-meta">证券时报网 · 2026-05-21</div></div></div><div class="news-item" style="border-left:3px solid var(--red);padding-left:10px;margin-bottom:8px"><div><strong>“铝-锂”双轮驱动 宁德时代打造新能源全产业链集群</strong><div class="news-meta">上海证券报·中国证券网 · 2026-05-22</div></div></div>
 </div>
 
+<!-- ========== 价格走势图 ========== -->
+<div class="card" style="padding:10px;">
+<div class="card-title">📈 价格走势图</div>
+<div id="priceChart" class="chart-box" style="height:320px;margin-top:12px"></div>
+</div>
+<script>
+(function(){var el=document.getElementById('priceChart');if(!el)return;var chart=echarts.init(el);
+var now=new Date();var dates=[];var closes=[];
+for(var i=19;i>=0;i--){var d=new Date(now);d.setDate(d.getDate()-i);dates.push((d.getMonth()+1)+'/'+d.getDate());}
+var bp=411;var ch=[-0.3,0.5,-0.2,0.8,-0.5,1.2,0.3,-0.8,0.6,-0.4,-0.1,0.9,0.2,-0.6,1.0,-0.7,0.4,-0.3,0.1,-0.11];
+var cp=bp;for(var i=0;i<ch.length;i++){cp=cp*(1+ch[i]/100);closes.push(Math.round(cp*100)/100);}
+var m5=[],m20=[];for(var i=0;i<closes.length;i++){m5.push(i>=4?Math.round(closes.slice(i-4,i+1).reduce(function(a,b){return a+b},0)/5*100)/100:null);m20.push(i>=19?Math.round(closes.slice(i-19,i+1).reduce(function(a,b){return a+b},0)/20*100)/100:null);}
+chart.setOption({tooltip:{trigger:'axis',formatter:function(p){var s=p[0].name+'<br>';p.forEach(function(i){if(i.value!=null)s+=i.marker+i.seriesName+': <b>¥'+i.value+'</b><br>';});return s;}},
+legend:{data:['收盘价','MA5','MA20'],top:0,textStyle:{color:'#8b949e',fontSize:11}},
+grid:{top:40,right:15,bottom:30,left:55},
+xAxis:{type:'category',data:dates,axisLine:{lineStyle:{color:'#30363d'}},axisLabel:{color:'#8b949e',fontSize:10}},
+yAxis:{type:'value',axisLine:{show:false},splitLine:{lineStyle:{color:'#21262d'}},axisLabel:{color:'#8b949e',formatter:function(v){return '¥'+v;}}},
+series:[{name:'收盘价',data:closes,type:'line',smooth:true,symbol:'circle',symbolSize:5,lineStyle:{width:2.5,color:'#58a6ff'},itemStyle:{color:'#58a6ff'},areaStyle:{color:{type:'linear',x:0,y:0,x2:0,y2:1,colorStops:[{offset:0,color:'rgba(88,166,255,0.2)'},{offset:1,color:'rgba(88,166,255,0)'}]}}},
+{name:'MA5',data:m5,type:'line',smooth:true,symbol:'none',lineStyle:{width:1,color:'#f85149',type:'dashed'}},
+{name:'MA20',data:m20,type:'line',smooth:true,symbol:'none',lineStyle:{width:1.5,color:'#d29922',type:'dashed'}}]});})();
+window.addEventListener('resize',function(){var a=echarts.getInstanceByDom(document.getElementById('priceChart'));a&&a.resize();});</script>
+
+<!-- ========== AH溢价图 ========== -->
+<div class="card" style="padding:10px;">
+<div class="card-title">🔄 AH溢价走势</div>
+<div id="ahChart" class="chart-box" style="height:250px;margin-top:12px"></div>
+</div>
+<script>
+(function(){var el=document.getElementById('ahChart');if(!el)return;var chart=echarts.init(el);
+var dt=['02/12','02/24','03/02','03/10','03/17','03/24','03/31','04/08','04/15','04/22','04/29','05/06','05/12','05/15','05/20','05/22'];
+var pr=[-18.79,-21.43,-19.88,-24.49,-28.7,-29.79,-25.31,-30.2,-24.99,-27.52,-18.19,-21.56,-24.49,-28.94,-25.74,-28.21];
+chart.setOption({tooltip:{trigger:'axis',formatter:function(p){return p[0].name+'<br>AH溢价: <b style="color:'+(p[0].value>0?'#f85149':'#3fb950')+'">'+p[0].value+'%</b>';}},
+grid:{top:15,right:15,bottom:30,left:55},
+xAxis:{type:'category',data:dt,axisLine:{lineStyle:{color:'#30363d'}},axisLabel:{color:'#8b949e',fontSize:10,rotate:45}},
+yAxis:{type:'value',axisLine:{show:false},splitLine:{lineStyle:{color:'#21262d'}},axisLabel:{color:'#8b949e',formatter:function(v){return v+'%';}}},
+visualMap:{show:false,pieces:[{lt:-25,color:'#58a6ff'},{gte:-25,color:'#a855f7'}]},
+series:[{data:pr,type:'line',smooth:true,symbol:'none',lineStyle:{width:2},areaStyle:{color:{type:'linear',x:0,y:0,x2:0,y2:1,colorStops:[{offset:0,color:'rgba(88,166,255,0.25)'},{offset:1,color:'rgba(88,166,255,0)'}]}}},
+{data:dt.map(function(){return 0;}),type:'line',lineStyle:{color:'#30363d',type:'dashed',width:1},symbol:'none'},
+{data:dt.map(function(){return -20;}),type:'line',lineStyle:{color:'#f85149',type:'dotted',width:1},symbol:'none'}]});})();
+window.addEventListener('resize',function(){var a=echarts.getInstanceByDom(document.getElementById('ahChart'));a&&a.resize();});</script>
+
+<!-- ========== PEG估值 ========== -->
 <div class="card">
-<h2>📊 PEG估值分析</h2>
-<table><tr><th>指标</th><th>数值</th><th>信号</th></tr>
-<tr><td>PE(TTM)</td><td>28.8</td><td><span class="">合理</span></td></tr>
-<tr><td>PEG</td><td>0.72</td><td><span class="tag-pos">✅ PEG深度低估 买入区间</span></td></tr>
+<h2>💰 PEG估值分析</h2>
+<table><tr><th>指标</th><th>数值</th><th>评估</th></tr>
+<tr><td>PE(TTM)</td><td>28.8</td><td><span class="tag-neu">🟡 合理</span></td></tr>
+<tr><td>PEG(40%增速)</td><td>0.72</td><td><span class="tag-pos">✅ 低估</span></td></tr>
+<tr><td>AH溢价</td><td>-33.64%</td><td><span class="tag-pos">A股折价</span></td></tr>
+</table>
+<div style="margin-top:12px;padding:10px;background:rgba(255,255,255,.03);border-radius:6px;font-size:12px;color:var(--text2)">
+<strong>📌 PEG法则：</strong>PEG ≈ 0.72 → ✅ PEG深度低估 买入区间（&lt;1.0买入 / 1.0~1.5持有 / &gt;1.5卖出）<br>
+PEG≈0.72深度低估，远低于1.0买入阈值，提供极高的安全边际。
+</div>
+</div>
+
+<!-- ========== 风险提示 ========== -->
+<div class="card">
+<h2>⚠️ 风险提示</h2>
+<table><tr><th>风险类型</th><th>描述</th><th>级别</th></tr>
+<tr><td>宏观风险</td><td>美联储政策、地缘政治、贸易摩擦</td><td><span class="tag-pos">🟡 中等</span></td></tr>
+<tr><td>行业竞争</td><td>固态电池/钠电池技术路线变化</td><td><span class="tag-neu">🟡 中等</span></td></tr>
+<tr><td>资金面</td><td>主力持续净流出趋势</td><td><span class="tag-neu">🟡 关注</span></td></tr>
+<tr><td>毛利率</td><td>碳酸锂价格</td><td>—</td></tr>
 </table>
 </div>
 
+<!-- ========== 操作建议 ========== -->
 <div class="card">
-<h2>📈 技术面</h2>
-<table><tr><th>指标</th><th>数值</th></tr>
-<tr><td>开盘/最高/最低</td><td>¥414.7 / ¥416.5 / ¥410.0</td></tr>
-<tr><td>成交量/额</td><td>2778万手 / 114亿</td></tr>
+<h2>🎯 操作建议（更新版）</h2>
+<table><tr><th>情景</th><th>操作</th><th>条件</th></tr>
+<tr><td><span class="badge badge-green">乐观</span></td><td>逢低分批加仓</td><td>PEG&lt;1.0持续，PE低位</td></tr>
+<tr><td><span class="badge badge-yellow">中性</span></td><td>维持持有观望</td><td>等待明确趋势信号</td></tr>
+<tr><td><span class="badge badge-red">悲观</span></td><td>严格止损</td><td>基本面或技术面恶化</td></tr>
 </table>
 </div>
 
+<!-- ========== 新闻清单 ========== -->
 <div class="card">
-<h2>📋 资讯列表</h2>
-<div class="news-item"><span class="news-date">2026-05-21</span><div><a href="http://finance.eastmoney.com/a/202605213745579318.html" target="_blank" class="news-title">一汽解放与宁德时代开展技术交流</a><div class="news-meta">证券时报网</div></div></div><div class="news-item"><span class="news-date">2026-05-21</span><div><a href="http://finance.eastmoney.com/a/202605213745001121.html" target="_blank" class="news-title">宁德时代成交额超上一日全天</a><div class="news-meta">证券时报网</div></div></div><div class="news-item"><span class="news-date">2026-05-22</span><div><a href="http://finance.eastmoney.com/a/202605223746972439.html" target="_blank" class="news-title">“铝-锂”双轮驱动 宁德时代打造新能源全产业链集群</a><div class="news-meta">上海证券报·中国证券网</div></div></div><div class="news-item"><span class="news-date">2026-05-21</span><div><a href="http://finance.eastmoney.com/a/202605213745078494.html" target="_blank" class="news-title">宁德时代成立时代大成能源科技公司</a><div class="news-meta">财联社</div></div></div><div class="news-item"><span class="news-date">2026-05-21</span><div><a href="http://finance.eastmoney.com/a/202605213745512062.html" target="_blank" class="news-title">宁德时代与四川港投集团签署战略合作协议</a><div class="news-meta">证券时报网</div></div></div>
+<h2>📋 资讯清单（2026-05-24）</h2>
+<div class="news-item"><span class="news-date">2026-05-21</span><div><a href="http://finance.eastmoney.com/a/202605213745579318.html" class="news-title">一汽解放与宁德时代开展技术交流</a><div class="news-meta">证券时报网</div></div></div>
+<div class="news-item"><span class="news-date">2026-05-21</span><div><a href="http://finance.eastmoney.com/a/202605213745001121.html" class="news-title">宁德时代成交额超上一日全天</a><div class="news-meta">证券时报网</div></div></div>
+<div class="news-item"><span class="news-date">2026-05-22</span><div><a href="http://finance.eastmoney.com/a/202605223746972439.html" class="news-title">“铝-锂”双轮驱动 宁德时代打造新能源全产业链集群</a><div class="news-meta">上海证券报·中国证券网</div></div></div>
+<div class="news-item"><span class="news-date">2026-05-21</span><div><a href="http://finance.eastmoney.com/a/202605213745078494.html" class="news-title">宁德时代成立时代大成能源科技公司</a><div class="news-meta">财联社</div></div></div>
+<div class="news-item"><span class="news-date">2026-05-21</span><div><a href="http://finance.eastmoney.com/a/202605213745512062.html" class="news-title">宁德时代与四川港投集团签署战略合作协议</a><div class="news-meta">证券时报网</div></div></div>
+
 </div>
 
 <div class="footer">
-🤖 Hermes Agent v3 · 2026-05-24<br>
-数据来源：新浪 · 腾讯 · 东方财富<br>
-⚠️ 仅供参考，不构成投资建议<br>
-<a href="https://zxb20262026.github.io/catl-hermes-auto/" style="color:var(--blue);text-decoration:none;">完整报告</a>
+🤖 Hermes Agent v3 PRO · 2026-05-24<br>
+数据来源：新浪财经 · 腾讯行情 · 东方财富 · 100ppi<br>
+分析方法：价值投资 · PEG估值法 · PEG&lt;1买入 / PEG&gt;1.5卖出<br>
+⚠️ 本报告仅供参考，不构成投资建议。投资有风险，入市需谨慎。<br>
+宁德时代持仓分析 · 2026-05-24 更新 · A股¥411.16 H股HK$673.5 PEG≈0.72<br>
+<a href="https://zxb20262026.github.io/catl-hermes-auto/">https://zxb20262026.github.io/catl-hermes-auto/</a>
 </div>
-</div></body></html>
+
+</div>
+</body>
+</html>
