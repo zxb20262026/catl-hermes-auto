@@ -1,55 +1,55 @@
 {
-  "date": "2026-05-24",
+  "date": "2026-05-26",
   "a_share": {
     "name": "宁德时代",
-    "open": 414.7,
-    "close_prev": 411.63,
-    "price": 411.16,
-    "high": 416.5,
-    "low": 410.0,
-    "volume": 27788381,
-    "amount": 11472585703.44
+    "open": 411.28,
+    "close_prev": 411.16,
+    "price": 402.88,
+    "high": 414.5,
+    "low": 400.0,
+    "volume": 38197710,
+    "amount": 15479408961.51
   },
   "h_share": {
     "name": "宁德时代",
     "price": 673.5
   },
   "pe": {
-    "pe_ttm": 28.7812
+    "pe_ttm": 72.5184
   },
   "fund_flow": {
     "info": "资金流向数据暂不可用"
   },
   "news": [
     {
+      "title": "宁德时代 拟“上车”蓝电",
+      "date": "2026-05-26",
+      "source": "中国基金报",
+      "url": "http://finance.eastmoney.com/a/202605253748548162.html"
+    },
+    {
+      "title": "赛力斯“蓝电”品牌增资66.7亿元 宁德时代等入股",
+      "date": "2026-05-25",
+      "source": "证券时报网",
+      "url": "http://finance.eastmoney.com/a/202605253748398718.html"
+    },
+    {
+      "title": "赛力斯子公司获66.7亿元增资！宁德时代等参与战投",
+      "date": "2026-05-25",
+      "source": "大河财立方",
+      "url": "http://finance.eastmoney.com/a/202605253748537890.html"
+    },
+    {
+      "title": "电力设备行业资金流出榜：宁德时代等39股净流出资金超亿元",
+      "date": "2026-05-25",
+      "source": "证券时报网",
+      "url": "http://finance.eastmoney.com/a/202605253748273982.html"
+    },
+    {
       "title": "一汽解放与宁德时代开展技术交流",
       "date": "2026-05-21",
       "source": "证券时报网",
       "url": "http://finance.eastmoney.com/a/202605213745579318.html"
-    },
-    {
-      "title": "宁德时代成交额超上一日全天",
-      "date": "2026-05-21",
-      "source": "证券时报网",
-      "url": "http://finance.eastmoney.com/a/202605213745001121.html"
-    },
-    {
-      "title": "“铝-锂”双轮驱动 宁德时代打造新能源全产业链集群",
-      "date": "2026-05-22",
-      "source": "上海证券报·中国证券网",
-      "url": "http://finance.eastmoney.com/a/202605223746972439.html"
-    },
-    {
-      "title": "宁德时代成立时代大成能源科技公司",
-      "date": "2026-05-21",
-      "source": "财联社",
-      "url": "http://finance.eastmoney.com/a/202605213745078494.html"
-    },
-    {
-      "title": "宁德时代与四川港投集团签署战略合作协议",
-      "date": "2026-05-21",
-      "source": "证券时报网",
-      "url": "http://finance.eastmoney.com/a/202605213745512062.html"
     }
   ],
   "lithium": null
